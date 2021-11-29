@@ -1,0 +1,39 @@
+##### QUERY 3 OUTPUT #####
+
+----- Dependency Parsing -----
+SHIFT	['Root', 'tàu_hỏa']	['nào', 'đến', 'thành_phố', 'hồ_chí_minh', '?']	
+RIGHTARC	['Root', 'tàu_hỏa', 'nào']	['đến', 'thành_phố', 'hồ_chí_minh', '?']	(whmod, tàu_hỏa, nào)
+REDUCE	['Root', 'tàu_hỏa']	['đến', 'thành_phố', 'hồ_chí_minh', '?']	
+LEFTARC	['Root']	['đến', 'thành_phố', 'hồ_chí_minh', '?']	(subj, đến, tàu_hỏa)
+RIGHTARC	['Root', 'đến']	['thành_phố', 'hồ_chí_minh', '?']	(root, Root, đến)
+RIGHTARC	['Root', 'đến', 'thành_phố']	['hồ_chí_minh', '?']	(dobj, đến, thành_phố)
+RIGHTARC	['Root', 'đến', 'thành_phố', 'hồ_chí_minh']	['?']	(namemod, thành_phố, hồ_chí_minh)
+REDUCE	['Root', 'đến', 'thành_phố']	['?']	
+REDUCE	['Root', 'đến']	['?']	
+RIGHTARC	['Root', 'đến', '?']	[]	(punc, đến, ?)
+
+(whmod, tàu_hỏa, nào) (subj, đến, tàu_hỏa) (root, Root, đến) (dobj, đến, thành_phố) (namemod, thành_phố, hồ_chí_minh) (punc, đến, ?)
+------------------------------
+
+
+---- Grammartical Relation ----
+(s1 WHQUERY (WHICH t1 TÀU_HỎA))
+(s1 PRED ĐẾN)
+(s1 LSUBJ TÀU_HỎA)
+(s1 LOBJ (NAME h1 "HỒ_CHÍ_MINH"))
+-------------------------------
+
+
+-------- Logical Form --------
+(WH QUERY(& (ĐẾN s1) (AGENT s1 (WHICH t1 TÀU_HỎA)) (THEME s1 (NAME h1 "HỒ_CHÍ_MINH"))))
+------------------------------
+
+
+------- Procedure Form -------
+(PRINT-ALL ?t (TRAIN ?t) (ATIME ?t HCM ?dt))
+------------------------------
+
+
+------ Procedure Execute ------
+Tàu hỏa B3. 
+-------------------------------

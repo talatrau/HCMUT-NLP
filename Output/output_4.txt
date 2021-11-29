@@ -1,0 +1,46 @@
+##### QUERY 4 OUTPUT #####
+
+----- Dependency Parsing -----
+SHIFT	['Root', 'tàu_hỏa']	['nào', 'chạy', 'từ', 'nha_trang', ',', 'lúc', 'mấy_giờ', '?']	
+RIGHTARC	['Root', 'tàu_hỏa', 'nào']	['chạy', 'từ', 'nha_trang', ',', 'lúc', 'mấy_giờ', '?']	(whmod, tàu_hỏa, nào)
+REDUCE	['Root', 'tàu_hỏa']	['chạy', 'từ', 'nha_trang', ',', 'lúc', 'mấy_giờ', '?']	
+LEFTARC	['Root']	['chạy', 'từ', 'nha_trang', ',', 'lúc', 'mấy_giờ', '?']	(subj, chạy, tàu_hỏa)
+RIGHTARC	['Root', 'chạy']	['từ', 'nha_trang', ',', 'lúc', 'mấy_giờ', '?']	(root, Root, chạy)
+RIGHTARC	['Root', 'chạy', 'từ']	['nha_trang', ',', 'lúc', 'mấy_giờ', '?']	(pmod, chạy, từ)
+RIGHTARC	['Root', 'chạy', 'từ', 'nha_trang']	[',', 'lúc', 'mấy_giờ', '?']	(pobj, từ, nha_trang)
+REDUCE	['Root', 'chạy', 'từ']	[',', 'lúc', 'mấy_giờ', '?']	
+REDUCE	['Root', 'chạy']	[',', 'lúc', 'mấy_giờ', '?']	
+RIGHTARC	['Root', 'chạy', ',']	['lúc', 'mấy_giờ', '?']	(punc, chạy, ,)
+REDUCE	['Root', 'chạy']	['lúc', 'mấy_giờ', '?']	
+RIGHTARC	['Root', 'chạy', 'lúc']	['mấy_giờ', '?']	(aux, chạy, lúc)
+RIGHTARC	['Root', 'chạy', 'lúc', 'mấy_giờ']	['?']	(whmod, lúc, mấy_giờ)
+REDUCE	['Root', 'chạy', 'lúc']	['?']	
+REDUCE	['Root', 'chạy']	['?']	
+RIGHTARC	['Root', 'chạy', '?']	[]	(punc, chạy, ?)
+
+(whmod, tàu_hỏa, nào) (subj, chạy, tàu_hỏa) (root, Root, chạy) (pmod, chạy, từ) (pobj, từ, nha_trang) (punc, chạy, ,) (aux, chạy, lúc) (whmod, lúc, mấy_giờ) (punc, chạy, ?)
+------------------------------
+
+
+---- Grammartical Relation ----
+(s1 WHQUERY (WHICH t1 TÀU_HỎA))
+(s1 WHQUERY (WHEN s1 TIME))
+(s1 PRED CHẠY)
+(s1 LSUBJ TÀU_HỎA)
+(s1 PFROM (NAME n1 "NHA_TRANG"))
+-------------------------------
+
+
+-------- Logical Form --------
+(WH QUERY(& (AT_TIME s1 (WHEN s1 TIME)) (CHẠY s1) (EXPERIENCER s1 (WHICH t1 TÀU_HỎA)) (FROM_LOC fl s1 (NAME n1 "NHA_TRANG"))))
+------------------------------
+
+
+------- Procedure Form -------
+(PRINT-ALL ?t (TRAIN ?t) ?st (STIME ?st) (DTIME ?t NTRANG ?st))
+------------------------------
+
+
+------ Procedure Execute ------
+Không tồn tại chuyến tàu thỏa yêu cầu. 
+-------------------------------

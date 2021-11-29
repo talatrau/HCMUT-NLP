@@ -1,0 +1,46 @@
+##### QUERY 5 OUTPUT #####
+
+----- Dependency Parsing -----
+SHIFT	['Root', 'tàu_hỏa']	['nào', 'chạy', 'từ', 'thành_phố', 'hồ_chí_minh', 'đến', 'hà_nội', '?']	
+RIGHTARC	['Root', 'tàu_hỏa', 'nào']	['chạy', 'từ', 'thành_phố', 'hồ_chí_minh', 'đến', 'hà_nội', '?']	(whmod, tàu_hỏa, nào)
+REDUCE	['Root', 'tàu_hỏa']	['chạy', 'từ', 'thành_phố', 'hồ_chí_minh', 'đến', 'hà_nội', '?']	
+LEFTARC	['Root']	['chạy', 'từ', 'thành_phố', 'hồ_chí_minh', 'đến', 'hà_nội', '?']	(subj, chạy, tàu_hỏa)
+RIGHTARC	['Root', 'chạy']	['từ', 'thành_phố', 'hồ_chí_minh', 'đến', 'hà_nội', '?']	(root, Root, chạy)
+RIGHTARC	['Root', 'chạy', 'từ']	['thành_phố', 'hồ_chí_minh', 'đến', 'hà_nội', '?']	(pmod, chạy, từ)
+RIGHTARC	['Root', 'chạy', 'từ', 'thành_phố']	['hồ_chí_minh', 'đến', 'hà_nội', '?']	(pobj, từ, thành_phố)
+RIGHTARC	['Root', 'chạy', 'từ', 'thành_phố', 'hồ_chí_minh']	['đến', 'hà_nội', '?']	(namemod, thành_phố, hồ_chí_minh)
+REDUCE	['Root', 'chạy', 'từ', 'thành_phố']	['đến', 'hà_nội', '?']	
+REDUCE	['Root', 'chạy', 'từ']	['đến', 'hà_nội', '?']	
+REDUCE	['Root', 'chạy']	['đến', 'hà_nội', '?']	
+RIGHTARC	['Root', 'chạy', 'đến']	['hà_nội', '?']	(pmod, chạy, đến)
+RIGHTARC	['Root', 'chạy', 'đến', 'hà_nội']	['?']	(pobj, đến, hà_nội)
+REDUCE	['Root', 'chạy', 'đến']	['?']	
+REDUCE	['Root', 'chạy']	['?']	
+RIGHTARC	['Root', 'chạy', '?']	[]	(punc, chạy, ?)
+
+(whmod, tàu_hỏa, nào) (subj, chạy, tàu_hỏa) (root, Root, chạy) (pmod, chạy, từ) (pobj, từ, thành_phố) (namemod, thành_phố, hồ_chí_minh) (pmod, chạy, đến) (pobj, đến, hà_nội) (punc, chạy, ?)
+------------------------------
+
+
+---- Grammartical Relation ----
+(s1 WHQUERY (WHICH t1 TÀU_HỎA))
+(s1 PRED CHẠY)
+(s1 LSUBJ TÀU_HỎA)
+(s1 PFROM (NAME h1 "HỒ_CHÍ_MINH"))
+(s1 PTO (NAME h1 "HÀ_NỘI"))
+-------------------------------
+
+
+-------- Logical Form --------
+(WH QUERY(& (CHẠY s1) (EXPERIENCER s1 (WHICH t1 TÀU_HỎA)) (FROM_LOC fl s1 (NAME h1 "HỒ_CHÍ_MINH")) (TO_LOC tl s1 (NAME h1 "HÀ_NỘI"))))
+------------------------------
+
+
+------- Procedure Form -------
+(PRINT-ALL ?t (TRAIN ?t) (ATIME ?t HN ?dt) (DTIME ?t HCM ?st))
+------------------------------
+
+
+------ Procedure Execute ------
+Tàu hỏa B5. 
+-------------------------------

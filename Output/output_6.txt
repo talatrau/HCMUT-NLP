@@ -1,0 +1,43 @@
+##### QUERY 6 OUTPUT #####
+
+----- Dependency Parsing -----
+SHIFT	['Root', 'tàu_hỏa']	['b5', 'có', 'chạy', 'từ', 'đà_nẵng', 'không', '?']	
+RIGHTARC	['Root', 'tàu_hỏa', 'b5']	['có', 'chạy', 'từ', 'đà_nẵng', 'không', '?']	(idmod, tàu_hỏa, b5)
+SHIFT	['Root', 'tàu_hỏa', 'b5', 'có']	['chạy', 'từ', 'đà_nẵng', 'không', '?']	
+LEFTARC	['Root', 'tàu_hỏa', 'b5']	['chạy', 'từ', 'đà_nẵng', 'không', '?']	(aux, chạy, có)
+REDUCE	['Root', 'tàu_hỏa']	['chạy', 'từ', 'đà_nẵng', 'không', '?']	
+LEFTARC	['Root']	['chạy', 'từ', 'đà_nẵng', 'không', '?']	(subj, chạy, tàu_hỏa)
+RIGHTARC	['Root', 'chạy']	['từ', 'đà_nẵng', 'không', '?']	(root, Root, chạy)
+RIGHTARC	['Root', 'chạy', 'từ']	['đà_nẵng', 'không', '?']	(pmod, chạy, từ)
+RIGHTARC	['Root', 'chạy', 'từ', 'đà_nẵng']	['không', '?']	(pobj, từ, đà_nẵng)
+REDUCE	['Root', 'chạy', 'từ']	['không', '?']	
+REDUCE	['Root', 'chạy']	['không', '?']	
+RIGHTARC	['Root', 'chạy', 'không']	['?']	(aux, chạy, không)
+REDUCE	['Root', 'chạy']	['?']	
+RIGHTARC	['Root', 'chạy', '?']	[]	(punc, chạy, ?)
+
+(idmod, tàu_hỏa, b5) (aux, chạy, có) (subj, chạy, tàu_hỏa) (root, Root, chạy) (pmod, chạy, từ) (pobj, từ, đà_nẵng) (aux, chạy, không) (punc, chạy, ?)
+------------------------------
+
+
+---- Grammartical Relation ----
+(s1 YNQUERY CHẠY)
+(s1 PRED CHẠY)
+(s1 LSUBJ (ID B5 TÀU_HỎA))
+(s1 PFROM (NAME đ1 "ĐÀ_NẴNG"))
+-------------------------------
+
+
+-------- Logical Form --------
+(YS QUERY(& (CHẠY s1) (EXPERIENCER s1 (ID B5 TÀU_HỎA)) (FROM_LOC fl s1 (NAME đ1 "ĐÀ_NẴNG"))))
+------------------------------
+
+
+------- Procedure Form -------
+(YES-NO (DTIME B5 DANANG ?st))
+------------------------------
+
+
+------ Procedure Execute ------
+Không. 
+-------------------------------
