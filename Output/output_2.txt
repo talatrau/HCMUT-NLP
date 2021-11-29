@@ -1,4 +1,4 @@
-##### QUERY 2 OUTPUT #####
+##### OUTPUT OF QUERY QUESTION 2 #####
 
 ----- Dependency Parsing -----
 SHIFT	['Root', 'thời_gian']	['tàu_hỏa', 'b3', 'chạy', 'từ', 'đà_nẵng', 'đến', 'thành_phố', 'hồ_chí_minh', 'là', 'mấy_giờ', '?']	
@@ -32,20 +32,20 @@ RIGHTARC	['Root', 'chạy', '?']	[]	(punc, chạy, ?)
 (s1 WHQUERY (WHAT s1 TIME))
 (s1 PRED CHẠY)
 (s1 LSUBJ THỜI_GIAN)
+(THỜI_GIAN NMOD (ID B3 TÀU_HỎA))
 (s1 PTO (NAME h1 "HỒ_CHÍ_MINH"))
 (s1 PFROM (NAME đ1 "ĐÀ_NẴNG"))
-(THỜI_GIAN NMOD (ID B3 TÀU_HỎA))
 -------------------------------
 
 
 -------- Logical Form --------
-(WH QUERY(& (RUN_TIME s1 (WHAT s1 TIME)) (CHẠY s1) (EXPERIENCER s1 THỜI_GIAN) (TO_LOC tl s1 (NAME h1 "HỒ_CHÍ_MINH")) (FROM_LOC fl s1 (NAME đ1 "ĐÀ_NẴNG")) (NMOD THỜI_GIAN (ID B3 TÀU_HỎA))))
+(WH QUERY(& (RUN_TIME s1 (WHAT s1 TIME)) (CHẠY s1) (EXPERIENCER s1 THỜI_GIAN) (NMOD THỜI_GIAN (ID B3 TÀU_HỎA)) (TO_LOC tl s1 (NAME h1 "HỒ_CHÍ_MINH")) (FROM_LOC fl s1 (NAME đ1 "ĐÀ_NẴNG"))))
 ------------------------------
 
 
-------- Procedure Form -------
+----- Procedure Semantics -----
 (PRINT-ALL ?rt (RUN_TIME ?rt) (RUN-TIME B3 DANANG HCM ?rt) (ATIME B3 HCM ?dt) (DTIME B3 DANANG ?st))
-------------------------------
+-------------------------------
 
 
 ------ Procedure Execute ------

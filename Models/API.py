@@ -477,7 +477,7 @@ class Process:
             elif self.mode == "YN":
                 procedure = "YES-NO " + " ".join(ele for ele in procedure)
             
-            return "------- Procedure Form -------\n(" + procedure + ")\n------------------------------\n\n\n"
+            return "----- Procedure Semantics -----\n(" + procedure + ")\n-------------------------------\n\n\n"
 
 
     def pipeline(self, tokens: List[str], types: List[str]):

@@ -1,4 +1,4 @@
-##### QUERY 1 OUTPUT #####
+##### OUTPUT OF QUERY QUESTION 1 #####
 
 ----- Dependency Parsing -----
 SHIFT	['Root', 'tàu_hỏa']	['nào', 'đến', 'thành_phố', 'huế', 'lúc', '19:00hr', '?']	
@@ -34,9 +34,9 @@ RIGHTARC	['Root', 'đến', '?']	[]	(punc, đến, ?)
 ------------------------------
 
 
-------- Procedure Form -------
+----- Procedure Semantics -----
 (PRINT-ALL ?t (TRAIN ?t) (ATIME ?t HUE 19:00HR))
-------------------------------
+-------------------------------
 
 
 ------ Procedure Execute ------

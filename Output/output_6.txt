@@ -1,4 +1,4 @@
-##### QUERY 6 OUTPUT #####
+##### OUTPUT OF QUERY QUESTION 6 #####
 
 ----- Dependency Parsing -----
 SHIFT	['Root', 'tàu_hỏa']	['b5', 'có', 'chạy', 'từ', 'đà_nẵng', 'không', '?']	
@@ -33,9 +33,9 @@ RIGHTARC	['Root', 'chạy', '?']	[]	(punc, chạy, ?)
 ------------------------------
 
 
-------- Procedure Form -------
+----- Procedure Semantics -----
 (YES-NO (DTIME B5 DANANG ?st))
-------------------------------
+-------------------------------
 
 
 ------ Procedure Execute ------

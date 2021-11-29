@@ -1,4 +1,4 @@
-##### QUERY 5 OUTPUT #####
+##### OUTPUT OF QUERY QUESTION 5 #####
 
 ----- Dependency Parsing -----
 SHIFT	['Root', 'tàu_hỏa']	['nào', 'chạy', 'từ', 'thành_phố', 'hồ_chí_minh', 'đến', 'hà_nội', '?']	
@@ -26,19 +26,19 @@ RIGHTARC	['Root', 'chạy', '?']	[]	(punc, chạy, ?)
 (s1 WHQUERY (WHICH t1 TÀU_HỎA))
 (s1 PRED CHẠY)
 (s1 LSUBJ TÀU_HỎA)
-(s1 PFROM (NAME h1 "HỒ_CHÍ_MINH"))
 (s1 PTO (NAME h1 "HÀ_NỘI"))
+(s1 PFROM (NAME h1 "HỒ_CHÍ_MINH"))
 -------------------------------
 
 
 -------- Logical Form --------
-(WH QUERY(& (CHẠY s1) (EXPERIENCER s1 (WHICH t1 TÀU_HỎA)) (FROM_LOC fl s1 (NAME h1 "HỒ_CHÍ_MINH")) (TO_LOC tl s1 (NAME h1 "HÀ_NỘI"))))
+(WH QUERY(& (CHẠY s1) (EXPERIENCER s1 (WHICH t1 TÀU_HỎA)) (TO_LOC tl s1 (NAME h1 "HÀ_NỘI")) (FROM_LOC fl s1 (NAME h1 "HỒ_CHÍ_MINH"))))
 ------------------------------
 
 
-------- Procedure Form -------
+----- Procedure Semantics -----
 (PRINT-ALL ?t (TRAIN ?t) (ATIME ?t HN ?dt) (DTIME ?t HCM ?st))
-------------------------------
+-------------------------------
 
 
 ------ Procedure Execute ------

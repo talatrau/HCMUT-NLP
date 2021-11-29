@@ -12,7 +12,7 @@ def main() -> None:
         tokens = preprocess.tokenize(text)
         types = preprocess.getWordTypes(tokens)
 
-        io.writeData(f"Output/output_{i+1}.txt", "w+", f"##### QUERY {i+1} OUTPUT #####\n\n")
+        io.writeData(f"Output/output_{i+1}.txt", "w+", f"##### OUTPUT OF QUERY QUESTION {i+1} #####\n\n")
         for result in process.pipeline(tokens, types):
             io.writeData(f"Output/output_{i+1}.txt", "a+", str(result))
 

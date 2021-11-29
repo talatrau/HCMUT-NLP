@@ -1,4 +1,4 @@
-##### QUERY 3 OUTPUT #####
+##### OUTPUT OF QUERY QUESTION 3 #####
 
 ----- Dependency Parsing -----
 SHIFT	['Root', 'tàu_hỏa']	['nào', 'đến', 'thành_phố', 'hồ_chí_minh', '?']	
@@ -29,9 +29,9 @@ RIGHTARC	['Root', 'đến', '?']	[]	(punc, đến, ?)
 ------------------------------
 
 
-------- Procedure Form -------
+----- Procedure Semantics -----
 (PRINT-ALL ?t (TRAIN ?t) (ATIME ?t HCM ?dt))
-------------------------------
+-------------------------------
 
 
 ------ Procedure Execute ------

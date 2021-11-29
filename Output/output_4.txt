@@ -1,4 +1,4 @@
-##### QUERY 4 OUTPUT #####
+##### OUTPUT OF QUERY QUESTION 4 #####
 
 ----- Dependency Parsing -----
 SHIFT	['Root', 'tàu_hỏa']	['nào', 'chạy', 'từ', 'nha_trang', ',', 'lúc', 'mấy_giờ', '?']	
@@ -23,8 +23,8 @@ RIGHTARC	['Root', 'chạy', '?']	[]	(punc, chạy, ?)
 
 
 ---- Grammartical Relation ----
-(s1 WHQUERY (WHICH t1 TÀU_HỎA))
 (s1 WHQUERY (WHEN s1 TIME))
+(s1 WHQUERY (WHICH t1 TÀU_HỎA))
 (s1 PRED CHẠY)
 (s1 LSUBJ TÀU_HỎA)
 (s1 PFROM (NAME n1 "NHA_TRANG"))
@@ -36,9 +36,9 @@ RIGHTARC	['Root', 'chạy', '?']	[]	(punc, chạy, ?)
 ------------------------------
 
 
-------- Procedure Form -------
+----- Procedure Semantics -----
 (PRINT-ALL ?t (TRAIN ?t) ?st (STIME ?st) (DTIME ?t NTRANG ?st))
-------------------------------
+-------------------------------
 
 
 ------ Procedure Execute ------
